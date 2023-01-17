@@ -62,7 +62,6 @@ require (
 	github.com/grafana/alerting v0.0.0-20230113220341-b9b3de89bca2
 	github.com/grafana/cuetsy v0.1.5
 	github.com/grafana/grafana-aws-sdk v0.11.0
-	github.com/grafana/grafana-azure-sdk-go v1.5.1
 	github.com/grafana/grafana-plugin-sdk-go v0.147.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
 	github.com/hashicorp/go-hclog v1.2.0
@@ -126,7 +125,7 @@ require (
 	gopkg.in/square/go-jose.v2 v2.5.1
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1
-	xorm.io/builder v0.3.6
+	xorm.io/builder v0.3.6 // indirect
 	xorm.io/core v0.7.3
 	xorm.io/xorm v0.8.2
 )
@@ -217,7 +216,7 @@ require (
 	github.com/protocolbuffers/txtpbfmt v0.0.0-20220428173112-74888fd59c2b // indirect
 	github.com/rs/cors v1.8.3 // indirect
 	github.com/sean-/seed v0.0.0-20170313163322-e2103e2c3529 // indirect
-	github.com/segmentio/encoding v0.3.5
+	github.com/segmentio/encoding v0.3.6
 	github.com/sercand/kuberesolver v2.4.0+incompatible // indirect
 	github.com/sergi/go-diff v1.2.0 // indirect
 	github.com/shurcooL/httpfs v0.0.0-20190707220628-8d4bc4ba7749 // indirect
@@ -273,8 +272,9 @@ require (
 
 require (
 	github.com/dave/dst v0.27.2
+	github.com/grafana/grafana-azure-sdk-go v1.5.2
 	github.com/grafana/thema v0.0.0-20230113164405-e0e8893756cf
-	github.com/parca-dev/parca v0.12.1
+	github.com/parca-dev/parca v0.15.0
 	github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f
 	k8s.io/apimachinery v0.25.3
 )
