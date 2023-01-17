@@ -91,7 +91,7 @@ require (
 	github.com/prometheus/common v0.39.0
 	github.com/prometheus/prometheus v1.8.2-0.20211011171444-354d8d2ecfac
 	github.com/robfig/cron/v3 v3.0.1
-	github.com/russellhaering/goxmldsig v1.1.1
+	github.com/russellhaering/goxmldsig v1.2.0
 	github.com/stretchr/testify v1.8.1
 	github.com/teris-io/shortid v0.0.0-20171029131806-771a37caa5cf
 	github.com/ua-parser/uap-go v0.0.0-20211112212520-00c877edfe0f
@@ -126,7 +126,7 @@ require (
 	gopkg.in/square/go-jose.v2 v2.5.1
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1
-	xorm.io/builder v0.3.6
+	xorm.io/builder v0.3.6 // indirect
 	xorm.io/core v0.7.3
 	xorm.io/xorm v0.8.2
 )
@@ -274,7 +274,7 @@ require (
 require (
 	github.com/dave/dst v0.27.2
 	github.com/grafana/thema v0.0.0-20230113164405-e0e8893756cf
-	github.com/parca-dev/parca v0.12.1
+	github.com/parca-dev/parca v0.15.0
 	github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f
 	k8s.io/apimachinery v0.25.3
 )
