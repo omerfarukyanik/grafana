@@ -8,6 +8,7 @@ import { contextSrv } from 'app/core/services/context_srv';
 import { createFolder, getFolderById, searchFolders } from 'app/features/manage-dashboards/state/actions';
 import { DashboardSearchHit } from 'app/features/search/types';
 
+import { TEMP_TREND_FOLDER_NAME } from '../../../features/search/constants';
 import { AccessControlAction, PermissionLevelString } from '../../../types';
 import appEvents from '../../app_events';
 
@@ -235,7 +236,9 @@ export class FolderPicker extends PureComponent<Props, State> {
 
 function mapSearchHitsToOptions(hits: DashboardSearchHit[], filter?: FolderPickerFilter) {
   const filteredHits = filter ? filter(hits) : hits;
-  return filteredHits.map((hit) => ({ label: hit.title, value: hit.id }));
+  return filteredHits
+    .filter((hit) => hit.title !== TEMP_TREND_FOLDER_NAME)
+    .map((hit) => ({ label: hit.title, value: hit.id }));
 }
 
 interface Args {

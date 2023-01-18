@@ -3,7 +3,7 @@ import { config } from '@grafana/runtime';
 import { TermCount } from 'app/core/components/TagFilter/TagFilter';
 import { backendSrv } from 'app/core/services/backend_srv';
 
-import { DEFAULT_MAX_VALUES, TYPE_KIND_MAP } from '../constants';
+import { DEFAULT_MAX_VALUES, TEMP_TREND_DASHBOARD_NAME, TEMP_TREND_FOLDER_NAME, TYPE_KIND_MAP } from '../constants';
 import { DashboardSearchHit, DashboardSearchItemType } from '../types';
 
 import { LocationInfo } from './types';
@@ -145,6 +145,12 @@ export class SQLSearcher implements GrafanaSearcher {
     let sortMetaName: string | undefined;
 
     for (let hit of rsp) {
+      if (
+        (hit.type === 'dash-folder' && hit.title === TEMP_TREND_FOLDER_NAME) ||
+        (hit.type === 'dash-db' && hit.title === TEMP_TREND_DASHBOARD_NAME)
+      ) {
+        continue;
+      }
       const k = hit.type === 'dash-folder' ? 'folder' : 'dashboard';
       kind.push(k);
       name.push(hit.title);

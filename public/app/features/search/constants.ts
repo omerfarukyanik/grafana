@@ -18,3 +18,6 @@ export const TYPE_KIND_MAP: { [key: string]: DashboardSearchItemType } = {
 };
 
 export const DEFAULT_MAX_VALUES = 1000;
+
+export const TEMP_TREND_FOLDER_NAME = 'Temp Trend Folder';
+export const TEMP_TREND_DASHBOARD_NAME = 'Temp Trend Dashboard';
