@@ -147,7 +147,9 @@ export class SQLSearcher implements GrafanaSearcher {
     for (let hit of rsp) {
       if (
         (hit.type === 'dash-folder' && hit.title === TEMP_TREND_FOLDER_NAME) ||
-        (hit.type === 'dash-db' && hit.title === TEMP_TREND_DASHBOARD_NAME)
+        (hit.type === 'dash-db' &&
+          hit.title === TEMP_TREND_DASHBOARD_NAME &&
+          hit?.folderTitle === TEMP_TREND_FOLDER_NAME)
       ) {
         continue;
       }
