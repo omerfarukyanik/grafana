@@ -14,6 +14,8 @@ import { getDashboardSrv } from 'app/features/dashboard/services/DashboardSrv';
 import { SearchCard } from 'app/features/search/components/SearchCard';
 import { DashboardSearchHit } from 'app/features/search/types';
 
+import { TEMP_TREND_DASHBOARD_NAME, TEMP_TREND_FOLDER_NAME } from '../../../features/search/constants';
+
 import { PanelLayout, PanelOptions } from './models.gen';
 import { getStyles } from './styles';
 
@@ -58,6 +60,9 @@ async function fetchDashboards(options: PanelOptions, replaceVars: InterpolateFu
   let dashMap = new Map<number, Dashboard>();
   for (const dashId of dashIds) {
     const dash = recent.find((d) => d.id === dashId);
+    if (dash.title === TEMP_TREND_DASHBOARD_NAME && dash.folderTitle === TEMP_TREND_FOLDER_NAME) {
+      continue;
+    }
     if (dash) {
       dashMap.set(dashId, { ...dash, isRecent: true });
     }
