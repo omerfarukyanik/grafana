@@ -60,7 +60,10 @@ async function fetchDashboards(options: PanelOptions, replaceVars: InterpolateFu
   let dashMap = new Map<number, Dashboard>();
   for (const dashId of dashIds) {
     const dash = recent.find((d) => d.id === dashId);
-    if (dash?.title === TEMP_TREND_DASHBOARD_NAME && dash?.folderTitle === TEMP_TREND_FOLDER_NAME) {
+    if (
+      (dash?.title === TEMP_TREND_DASHBOARD_NAME && dash?.folderTitle === TEMP_TREND_FOLDER_NAME) ||
+      dash?.title === TEMP_TREND_FOLDER_NAME
+    ) {
       continue;
     }
     if (dash) {
