@@ -3,7 +3,13 @@ import { config } from '@grafana/runtime';
 import { TermCount } from 'app/core/components/TagFilter/TagFilter';
 import { backendSrv } from 'app/core/services/backend_srv';
 
-import { DEFAULT_MAX_VALUES, TEMP_TREND_DASHBOARD_NAME, TEMP_TREND_FOLDER_NAME, TYPE_KIND_MAP } from '../constants';
+import {
+  DEFAULT_MAX_VALUES,
+  TEMP_TREND_DASHBOARD_NAME,
+  TEMP_TREND_FOLDER_NAME,
+  TEMP_EDIT_DASHBOARD_NAME_PREFIX,
+  TYPE_KIND_MAP,
+} from '../constants';
 import { DashboardSearchHit, DashboardSearchItemType } from '../types';
 
 import { LocationInfo } from './types';
@@ -149,7 +155,8 @@ export class SQLSearcher implements GrafanaSearcher {
         (hit.type === 'dash-folder' && hit.title === TEMP_TREND_FOLDER_NAME) ||
         (hit.type === 'dash-db' &&
           hit.title === TEMP_TREND_DASHBOARD_NAME &&
-          hit?.folderTitle === TEMP_TREND_FOLDER_NAME)
+          hit?.folderTitle === TEMP_TREND_FOLDER_NAME) ||
+        hit.title.startsWith(TEMP_EDIT_DASHBOARD_NAME_PREFIX)
       ) {
         continue;
       }
